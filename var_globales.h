@@ -1,1 +1,30 @@
-AtyÄ¬4aVÊA@TobÑÈÅoóN¼—C§8:Œ¼£#ø–—]ñäìñáÑü®îîv½¼0y´ èÆ'›”Uìµ6-°Ç¾ç"³h™È°='û{è­Þz²:Ã˜öµÜ<¤<äÜùêðÙ×s<¹lÄ6Ï™½dÈóÆ¯ƒÜ¤¹ù¢µË¡²!KÕp€ÈÖ¶‡‡*%Õâ§"è6d+zåžÉuL:Y{új‰XÔi3ßo‡ÌýzÔÄ¾Íé¦Ó÷íSÃÆ<^sel¬˜Fºv¸/˜Ú©oõ—¤¢Zžî@á½/5r¨öÜªL°ÕñPžÃ&ºžÁ¾Áë€uížc€Á>Ù÷ò»®À2¥òÑRó¸>Ýè¾§±*»Þ°*fN¾WÙñªôµ\¯a òŽu¼ô¡Ð¨Îh-\—O­$aS‰?ËšzŠ›—ðhh;òP\å_?Ö¤º½Š³ÿáRÄ¿ÙHZ€}(OURYeÐª¾r¥Má+C=ÿêÛþ m~DÂÿ`øwú¯X=D¯å¡v‹ÙQ“«añ°s&Éžõà¤†cù¾<­–Cð[]ÃØ!®’æ–zç;G¯yV_>Ç­×"·eñ]X‰W–rt;‡ƒâ*\õ¹j_½ÇFeœ®p ƒîêM1ó¤á7¤Îc^Q%§ØuÁ¦÷úÁ«’`KÄ§Ö]{¢€ÙÓƒ¯'Sö%¿$ÎQüÄ¥³Ôõ‚šR¼°×™AÀ¡åëi¸Vß$ZbÃ&ãEô·÷•õkS—¾æl 'ÎÿÙ¦Tz‰Tu±f?b;Âk¿õ„ÐÖâÞãWÜ<ñã5™×¤Öë•öìÙæòq¡/ÁgÉHhóƒQë¤­£·j“eñjv¹¦¼Ö‡Ô&)¤Q¨?¾Ù= ÖÒ¢UÜ5@š“ÖW<Ô^…BrËÛ:çÿ0©×ÎöéÖŽ½FJùÂù_âi‰DàR·ÛžÍ¹€ÊýL.§êlŽ¯?[üå®¢‹ƒ‘Šƒ˜y4ûù7/‰²±
+#define TAM_LEXEMA 200
+
+typedef struct
+{
+    long codigo;
+    char lexema[TAM_LEXEMA];
+} token;
+
+
+#define COD_IMP_ERRORES -1
+
+EXTERNA char * linea;
+EXTERNA char *liberar;
+EXTERNA int nro_linea;
+EXTERNA token token1;
+
+// Vbles globales agregadas por nosotros
+
+EXTERNA int cantParReales; // se usa para controlar la cant de par actuales contra la de formales, en una llamada a fcion
+EXTERNA char ultimoID[TAM_LEXEMA]; // se usa para hacer controles con la TS
+EXTERNA int ultimoTipo; // se usa para hacer controles con la TS
+EXTERNA int existeReturn; // se usa para determinar si una funcion tiene sentencia return
+EXTERNA char ultimoIdentificadorFuncion[TAM_LEXEMA]; // usado para identificar la ultima funcion definida. se usa en controles, por ej si existe return
+
+
+
+
+
+
+
