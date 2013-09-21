@@ -1,0 +1,13 @@
+**************************************************
+**************************************************
+20.09.2013
+**************************************************
+Se debe controlar si lo que se hizo en factor (leer un token mas) es correcto. Mirar las consecuencias. Por ejemplo con proposicion_e_s.
+Se debe recordar que en C++ no se permite lo siguiente:
+int a(){return 0;}
+void main(){
+	int a;
+	int b = a();
+	}
+El compilador mostrará el siguiente mensajes: "error: 'a' cannot be used as funciont."
+Otra forma de solucionarlo sin tener que leer otro token, es leer el identificador, si se encuentra en la tabla continuo, si no se encuentra en la tabla marco error. Si existe elemento en la tabla controlo el tipo de identificador del nivel mas cercano (Si es una funcion será TIPOFUNC y se espera que sea acompañado por un '('. Si es una variable se continua normalmente.

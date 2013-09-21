@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "ts.h"
+#include <stdlib.h>
 
 /*
 =====================================================================
