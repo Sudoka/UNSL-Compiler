@@ -756,7 +756,9 @@ void proposicion_e_s()
         scanner();
         if (sbol->codigo == CSHR) scanner();
         else error_handler(28);
+        /// ¿Aqui no se deberia actualizar el valor de ultimoId?
         variable();
+        /// Como variable() no pide el proximo token, token sigue teniendo el identificador de la variable causando un error.
         while (sbol->codigo == CSHR)
         {
             scanner();
@@ -1006,7 +1008,7 @@ void variable()
         }
         else
         {
-            ///Uso correcto. Acá van chequeos de tipo y eso...
+            /// Uso correcto. Acá van chequeos de tipo y eso...
         }
         scanner();
         expresion();

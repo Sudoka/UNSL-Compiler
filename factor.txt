@@ -1,0 +1,41 @@
+// Otra forma para realizar la produccion factor
+
+void factor()
+{
+switch (sbol->codigo){
+  case CIDENT: if (en_tabla(sbol->lexema) == NIL) 
+		{
+			error_handler();// identificador no declarado
+		}
+		else
+		{
+			if (ts[en_tabla(sbol->lexema)].ets->clase == CLASVAR)
+			{
+				variable();
+			}
+			else
+			{
+				llamada_funcion();
+			}
+		}
+             break; 
+
+  case CCONS_ENT:
+  case CCONS_FLO:
+  case CCONS_CAR: constante(); break;
+  case CCONS_STR: scanner(); break;
+  case CPAR_ABR: {
+                 scanner();
+		 expresion();
+		 if (sbol->codigo == CPAR_CIE) scanner();
+		 else error_handler(8);
+		 break;
+  }
+  case CNEG: {
+              scanner();
+	      expresion();
+	      break;
+  }
+  default: error_handler(8);
+  }
+}
